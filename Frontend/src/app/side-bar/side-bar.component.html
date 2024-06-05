@@ -1,0 +1,38 @@
+<ng-container>
+  <mat-drawer-container class="example-container">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Models</mat-label>
+        <mat-select required [(ngModel)]="selectedValue" name="model">
+          @for (model of llmModels; track model) {
+          <mat-option [value]="model">{{ model }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-card class="example-result-card">
+        <mat-card-content>
+          <h2>Temperature</h2>
+
+          <div class="example-label-container">
+            <label id="example-name-label" class="example-name-label"
+              >Value</label
+            >
+            <label class="example-value-label">{{ slider.value }}</label>
+          </div>
+          <mat-slider
+            class="example-margin"
+            [disabled]="disabled"
+            [max]="max"
+            [min]="min"
+            [step]="step"
+            [discrete]="thumbLabel"
+            [showTickMarks]="showTicks"
+          >
+            <input matSliderThumb [(ngModel)]="value" #slider />
+          </mat-slider>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </mat-drawer-container>
+</ng-container>

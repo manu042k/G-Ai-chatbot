@@ -1,0 +1,9 @@
+<ng-container
+  *ngIf="{
+    title: title
+  } as cmpObj"
+>
+  <mat-toolbar color="primary" class="example-toolbar">
+    {{ cmpObj.title }}
+  </mat-toolbar>
+</ng-container>

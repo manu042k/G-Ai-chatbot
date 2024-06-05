@@ -1,0 +1,52 @@
+.example-container {
+  width: 20%;
+  height: calc(100% - 11vh);
+  margin: 1%;
+  border: 1px solid #555;
+  background: rgb(247, 246, 246);
+}
+
+.example-form {
+  margin: 2%;
+  width: 96%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+
+.example-margin {
+  margin: 8px;
+}
+
+.example-width {
+  width: 100%;
+}
+
+.mat-mdc-slider {
+  width: 96%;
+}
+
+.mat-mdc-card + .mat-mdc-card {
+  margin-top: 8px;
+}
+
+.example-result-card h2 {
+}
+
+.example-label-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5%;
+}
+
+.example-result-card .example-value-label {
+  font-weight: 600;
+}

@@ -67,8 +67,8 @@ class DocumentProcess():
         
     
     def load_docs(self):
-        # loader = DirectoryLoader(self.directory)
-        loader = PyPDFLoader("docs/SHUIDOC.pdf")
+        loader = DirectoryLoader(self.directory)
+        # loader = PyPDFLoader("docs/SHUIDOC.pdf")
         self.loaded_documents = loader.load()
         return self.loaded_documents
         
@@ -84,15 +84,16 @@ class DocumentProcess():
         client = chromadb.Client()
         
         if client.list_collections():
+            client.Collection.delete("shui_collection")
             consent_collection = client.create_collection("shui_collection")
-        else:
-            print("Collection already exists") 
+         
             
         vectorstore = Chroma.from_documents(documents=self.split_docs(),
                                             embedding=self.embeddings,
                                             persist_directory="chroma_store"
                                             )                                  
         vectorstore.persist()
+        print("Added vectorstore")
         return vectorstore 
 
 
