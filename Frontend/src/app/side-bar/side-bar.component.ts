@@ -7,12 +7,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
 
 
-interface Car {
-  value: string;
-  viewValue: string;
-}
+
 @Component({
   selector: 'app-side-bar',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -26,6 +26,9 @@ interface Car {
     MatInputModule,
     MatSliderModule,
     MatCardModule,
+    MatButtonModule,
+    MatListModule,
+    MatDividerModule
 
   ],
   templateUrl: './side-bar.component.html',
@@ -44,4 +47,14 @@ export class SideBarComponent {
   step = 0.1;
   thumbLabel = false;
   value = 0.5;
+  selectedFile?: File;
+
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.selectedFile = input.files[0];
+    }
+  }
+  onUpload() {
+  }
 }
