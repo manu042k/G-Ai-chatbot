@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css');
+body {
+  background-color: #e0dfdf;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  color: #333333;
+  line-height: 1.6;
+  margin: 0;
+}

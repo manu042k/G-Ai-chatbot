@@ -3,7 +3,14 @@
     title: title
   } as cmpObj"
 >
-  <mat-toolbar color="primary" class="example-toolbar">
-    {{ cmpObj.title }}
-  </mat-toolbar>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-body-tertiary">
+    <div class="container-fluid">
+      <div
+        class="navbar-collapse justify-content-center"
+        id="navbarCenteredExample"
+      >
+        <p class="font-monospace fw-bold pad">{{ cmpObj.title }}</p>
+      </div>
+    </div>
+  </nav>
 </ng-container>

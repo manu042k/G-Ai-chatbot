@@ -1,10 +1,121 @@
 <app-nav></app-nav>
 
-<div class="container">
-  <div class="sidebar">
-    <app-side-bar></app-side-bar>
+<div class="sidebar">
+  <div class="mb-3">
+    <label
+      for="exampleFormControlInput1"
+      class="form-label font-monospace fw-bold"
+      >Model:</label
+    >
+    <select
+      class="form-select font-monospace fw-bold"
+      id="exampleSelect"
+      aria-label="Default select example"
+    >
+      <option class="form-select font-monospace" selected>Mistral</option>
+    </select>
   </div>
-  <div class="main-content">
-    <router-outlet></router-outlet>
+  <div class="mb-3">
+    <label
+      for="exampleFormControlInput1"
+      class="form-label font-monospace fw-bold"
+      >Temperature: {{ size }}</label
+    >
+    <input
+      type="range"
+      class="range"
+      min="0"
+      max="1"
+      step="0.1"
+      [value]="size"
+      id="customRange3"
+    />
+  </div>
+  <div class="mb-3">
+    <label
+      for="exampleFormControlInput1"
+      class="form-label font-monospace fw-bold"
+      >Ingest Document:</label
+    >
+    <input type="file" class="custom-file-input" id="fileInput" hidden />
+
+    <button
+      class="btn btn-outline font-monospace fw-bold"
+      type="button"
+      id="uploadButton"
+    >
+      <i class="bi bi-upload"></i> Upload
+    </button>
+  </div>
+  <div class="mb-3">
+    <label
+      for="exampleFormControlInput1"
+      class="form-label font-monospace fw-bold"
+      >Uploaded Documents:</label
+    >
+
+    <li class="list-group-item font-monospace fw-bold">An item</li>
+    <li class="list-group-item font-monospace fw-bold">A second item</li>
+    <li class="list-group-item font-monospace fw-bold">A third item</li>
+  </div>
+
+  <div class="sidebar-buttons">
+    <button class="btn btn-outline font-monospace fw-bold btn-sm" type="button">
+      Clear Uploads
+    </button>
+    <button class="btn btn-outline font-monospace fw-bold btn-sm" type="button">
+      Clear chat
+    </button>
+  </div>
+</div>
+
+<div class="content">
+  <div class="LLM-card">
+    <div class="LLM-icon">
+      <i class="bi bi-motherboard-fill"></i>
+    </div>
+    <div class="LLM-card-body">
+      <p class="card-text font-monospace fw-bold">
+        Hi,how can I help you today?
+      </p>
+    </div>
+  </div>
+  <div class="human-card">
+    <div class="LLM-icon">
+      <i class="bi bi-person-lines-fill"></i>
+    </div>
+    <div class="LLM-card-body">
+      <p class="card-text font-monospace fw-bold">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content. Some quick example text to build on the card
+      </p>
+    </div>
+  </div>
+  <!-- bottom-->
+
+  <div class="card bottom fixed-bottom">
+    <div class="form-floating d-flex align-items-center">
+      <textarea
+        class="form-control flex-grow-1 font-monospace fw-bold"
+        placeholder="Leave a comment here"
+        id="floatingTextarea2"
+        style="height: 100px; background-color: #cce2f4e4"
+        (click)="call($event)"
+      ></textarea>
+      <label
+        class="font-monospace fw-bold"
+        [hidden]="dis"
+        for="floatingTextarea2"
+        style="background: #cce2f4e4"
+        >Start typing...</label
+      >
+      <button
+        class="btn btn-outline-secondary btn-circle ms-2"
+        type="button"
+        id="button-addon2"
+      >
+        <i class="bi bi-send"></i>
+      </button>
+    </div>
   </div>
 </div>

@@ -2,11 +2,10 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule, NavComponent, SideBarComponent],
+  imports: [RouterModule, NavComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
   selector: 'app-root',
@@ -15,4 +14,11 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 })
 export class AppComponent {
   title = 'Frontend';
+  size = 0.5
+  dis: boolean = false;
+
+  call(event: Event) {
+    this.dis = true;
+    console.log(event);
+  }
 }

@@ -1,6 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 @Component({
@@ -9,7 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   styleUrl: './nav.component.css',
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [NgIf, MatToolbarModule]
+  imports: [NgIf]
 })
 export class NavComponent {
   title: string = "G-AI-Chatbot"
