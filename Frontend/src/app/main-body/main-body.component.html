@@ -46,6 +46,21 @@
   <!-- bottom-->
 
   <div class="card bottom fixed-bottom">
+    <div
+      *ngIf="loading$ | async"
+      class="d-flex justify-content-center"
+      style="padding: 1%"
+    >
+      <div class="spinner-grow spinner-grow-sm" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow spinner-grow-sm" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <div class="spinner-grow spinner-grow-sm" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
     <div class="form-floating d-flex align-items-center">
       <textarea
         class="form-control flex-grow-1 font-monospace fw-bold"
@@ -53,6 +68,7 @@
         id="floatingTextarea2"
         style="height: 100px; background-color: #cce2f4e4"
         (click)="call($event)"
+        [disabled]="loading$ | async"
         value="{{ currentContent }}"
         (input)="onValueChanged($event)"
       ></textarea>
