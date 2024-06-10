@@ -1,0 +1,94 @@
+<div class="sidebar">
+  <div class="mb-3">
+    <label
+      for="exampleFormControlInput1"
+      class="form-label font-monospace fw-bold"
+      >Model:</label
+    >
+
+    <select
+      class="form-select font-monospace fw-bold"
+      id="exampleSelect"
+      aria-label="Default select example"
+      (change)="onValueChanged($event)"
+    >
+      <option
+        *ngFor="let model of data$ | async"
+        class="form-select font-monospace"
+      >
+        {{ model }}
+      </option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label
+      for="exampleFormControlInput1"
+      class="form-label font-monospace fw-bold"
+      >Temperature: {{ temperature$ | async }}</label
+    >
+    <input
+      type="range"
+      class="range"
+      min="0"
+      max="1"
+      step="0.1"
+      [value]="size"
+      (change)="onValueChangedslider($event)"
+      id="customRange3"
+    />
+  </div>
+  <div class="mb-3">
+    <label
+      for="exampleFormControlInput1"
+      class="form-label font-monospace fw-bold"
+      >Ingest Document:</label
+    >
+    <input
+      type="file"
+      class="custom-file-input"
+      id="fileInput"
+      (change)="handleFileChange($event)"
+      hidden
+    />
+
+    <button
+      class="btn btn-outline font-monospace fw-bold"
+      type="button"
+      id="uploadButton"
+      (click)="uploadFile()"
+    >
+      <i class="bi bi-upload"></i> Upload
+    </button>
+  </div>
+  <div class="mb-3">
+    <label
+      for="exampleFormControlInput1"
+      class="form-label font-monospace fw-bold"
+      >Uploaded Documents:</label
+    >
+
+    <li
+      class="list-group-item font-monospace fw-bold"
+      *ngFor="let item of list$ | async"
+    >
+      {{ item }}
+    </li>
+  </div>
+
+  <div class="sidebar-buttons">
+    <button
+      class="btn btn-outline font-monospace fw-bold btn-sm"
+      (click)="clearList()"
+      type="button"
+    >
+      Clear Uploads
+    </button>
+    <button
+      class="btn btn-outline font-monospace fw-bold btn-sm"
+      (click)="clearChat()"
+      type="button"
+    >
+      Clear chat
+    </button>
+  </div>
+</div>

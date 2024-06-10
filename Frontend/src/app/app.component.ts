@@ -1,11 +1,12 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { MainBodyComponent } from './main-body/main-body.component';
 import { NavComponent } from './nav/nav.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @Component({
   standalone: true,
-  imports: [RouterModule, NavComponent],
+  imports: [RouterModule, NavComponent, SidenavComponent, MainBodyComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
   selector: 'app-root',
@@ -14,11 +15,6 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 })
 export class AppComponent {
   title = 'Frontend';
-  size = 0.5
-  dis: boolean = false;
 
-  call(event: Event) {
-    this.dis = true;
-    console.log(event);
-  }
+
 }

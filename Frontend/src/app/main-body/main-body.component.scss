@@ -1,0 +1,73 @@
+.content {
+  margin-top: 5rem;
+  margin-left: 15.625rem;
+  padding: 1.25rem;
+  flex-direction: column;
+}
+.LLM-card {
+  display: grid;
+  background-color: #ffffff;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  width: 100%;
+  padding: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5em;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+}
+.LLM-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  margin-right: 1em;
+}
+.LLM-icon i {
+  font-size: 1.5em;
+  color: #555;
+}
+.LLM-card-body {
+  flex: 1;
+}
+.human-card {
+  float: right;
+  width: 70%;
+  background-color: #cce2f4e4;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5em;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+}
+
+.bottom {
+  width: 81.5%;
+  margin-left: 16.625rem;
+  padding: 1em;
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  // border-radius: 0.5em;
+  // box-sizing: border-box;
+  margin-bottom: 1em;
+  // background-color: #cce2f4e4;
+}
+
+.btn-circle {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+.btn-circle .bi {
+  font-size: 24px;
+}

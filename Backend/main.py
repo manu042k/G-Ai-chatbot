@@ -83,8 +83,8 @@ async def upload_pdf(file: UploadFile = File(...)):
     with open(file_path, "wb") as f:
         f.write(contents)
     time.sleep(3)
-    process = DocumentProcess()
-    process.get_vectorstore()
+    # process = DocumentProcess()
+    # process.get_vectorstore()
 
     return JSONResponse(status_code=200, content={"file": file.filename})
 

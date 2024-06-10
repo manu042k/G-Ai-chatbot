@@ -1,0 +1,77 @@
+<div class="content">
+  <!-- <div class="LLM-card">
+    <div class="LLM-icon">
+      <i class="bi bi-motherboard-fill"></i>
+    </div>
+    <div class="LLM-card-body">
+      <p class="card-text font-monospace fw-bold">
+        Hi,how can I help you today?
+      </p>
+    </div>
+  </div>
+  <div class="human-card">
+    <div class="LLM-icon">
+      <i class="bi bi-person-lines-fill"></i>
+    </div>
+    <div class="LLM-card-body">
+      <p class="card-text font-monospace fw-bold">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content. Some quick example text to build on the card
+      </p>
+    </div>
+  </div> -->
+  <ng-container *ngFor="let message of messageList$ | async">
+    <div *ngIf="message.type == 'LLM'" class="LLM-card">
+      <div class="LLM-icon">
+        <i class="bi bi-motherboard-fill"></i>
+      </div>
+      <div class="LLM-card-body">
+        <p class="card-text font-monospace fw-bold">
+          {{ message.content }}
+        </p>
+      </div>
+    </div>
+    <div *ngIf="message.type == 'You'" class="human-card">
+      <div class="LLM-icon">
+        <i class="bi bi-person-lines-fill"></i>
+      </div>
+      <div class="LLM-card-body">
+        <p class="card-text font-monospace fw-bold">
+          {{ message.content }}
+        </p>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- bottom-->
+
+  <div class="card bottom fixed-bottom">
+    <div class="form-floating d-flex align-items-center">
+      <textarea
+        class="form-control flex-grow-1 font-monospace fw-bold"
+        placeholder="Leave a comment here"
+        id="floatingTextarea2"
+        style="height: 100px; background-color: #cce2f4e4"
+        (click)="call($event)"
+        value="{{ currentContent }}"
+        (input)="onValueChanged($event)"
+      ></textarea>
+      <label
+        class="font-monospace fw-bold"
+        [hidden]="dis"
+        for="floatingTextarea2"
+        style="background: #cce2f4e4"
+        >Start typing...</label
+      >
+      <button
+        [disabled]="!enableSendButton()"
+        class="btn btn-outline-secondary btn-circle ms-2"
+        type="button"
+        id="button-addon2"
+        (click)="sendMessage()"
+      >
+        <i class="bi bi-send"></i>
+      </button>
+    </div>
+  </div>
+</div>
