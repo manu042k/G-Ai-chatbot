@@ -41,6 +41,7 @@ async def chat(prompt: GenPromptModel):
 @app.post("/chat")
 async def chat(prompt: PromptModel):
     print(prompt)
+    return prompt
     try:
         print(prompt.query)
         response = ChatOllamaWrapper().answer_query(prompt.query)
